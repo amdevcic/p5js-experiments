@@ -1,0 +1,70 @@
+:root {
+  color-scheme: dark;
+  --page-bg: #151719;
+  --button-bg: #25292d;
+  --button-hover: #343a40;
+  --border: #41474d;
+  --text: #e6e8ea;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--page-bg);
+  color: var(--text);
+  font-family: Fira Sans, sans-serif;
+}
+
+button,
+select {
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: var(--button-bg);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+#canvas-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 24px;
+  gap: 12px;
+}
+
+#canvas-container canvas {
+  max-width: min(1100px, calc(100vw - 48px)) !important;
+  height: auto !important;
+  display: block;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  max-width: 100%;
+}
+
+button:hover,
+select:hover {
+  background-color: var(--button-hover);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+button:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
